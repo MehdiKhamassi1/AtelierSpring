@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.util.Set;
 
@@ -11,6 +12,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,5 +22,5 @@ public class Foyer {
     @OneToOne(mappedBy = "foyer")
     private Universite universite;
     @OneToMany(mappedBy = "foyer")
-    private Set<Bloc> Blocs;
+    private Set<Bloc> blocs;
 }

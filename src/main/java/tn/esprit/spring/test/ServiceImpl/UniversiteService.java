@@ -30,4 +30,7 @@ public class UniversiteService implements IServiceUniversite {
     public Universite retrieveUniversite(long idUniversite) {
         return universiterepository.findById(idUniversite).orElse(null);
     }
+    public Universite findByFoyerCapaciteFoyerAndFoyerBlocsCapaciteBloc(long capbloc,long capfoyer){
+        return universiterepository.findByFoyerCapaciteFoyerAndFoyerBlocsCapaciteBloc(capbloc,capfoyer);
+    }
 }

@@ -11,5 +11,6 @@ public interface IServiceBloc {
     Bloc addBloc (Bloc bloc);
     Bloc retrieveBloc (long idBloc);
     void removeBloc (long idBloc);
+    List<Bloc> getByUnivNom(String Nom);
 
 }

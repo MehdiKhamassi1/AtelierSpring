@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -12,7 +13,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Etudiant {
 
     @Id
@@ -23,7 +24,7 @@ public class Etudiant {
     private Long cin ;
     private String ecole ;
     private LocalDate dateNaissance ;
-    @ManyToMany(mappedBy = "Etudiants")
-    private Set<Reservation> Reservations;
+    @ManyToMany(mappedBy = "etudiants")
+    private Set<Reservation> reservations;
 
 }

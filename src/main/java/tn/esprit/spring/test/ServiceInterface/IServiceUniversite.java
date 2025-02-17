@@ -10,4 +10,5 @@ public interface IServiceUniversite {
     Universite addUniversite (Universite u);
     Universite updateUniversite (Universite u);
     Universite retrieveUniversite (long idUniversite);
+    Universite findByFoyerCapaciteFoyerAndFoyerBlocsCapaciteBloc(long capbloc,long capfoyer);
 }

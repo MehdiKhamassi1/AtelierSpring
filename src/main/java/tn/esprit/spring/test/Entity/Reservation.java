@@ -3,6 +3,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.LocalDate;
 import java.util.Set;
@@ -12,7 +13,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@FieldDefaults(level=AccessLevel.PRIVATE)
 public class Reservation {
     @Id
 
@@ -20,6 +21,6 @@ public class Reservation {
     private LocalDate anneeUniversitaire ;
     private Boolean estValide ;
     @ManyToMany
-    private Set<Etudiant> Etudiants;
+    private Set<Etudiant> etudiants;
 
 }

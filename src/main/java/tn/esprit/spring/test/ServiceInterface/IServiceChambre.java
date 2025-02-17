@@ -9,4 +9,6 @@ public interface IServiceChambre {
     Chambre addChambre(Chambre c);
     Chambre updateChambre (Chambre c);
     Chambre retrieveChambre (long idChambre);
+    List<Chambre> getchambreadresseuniv(String nom);
+    Chambre findByReservationsEtudiantsCinAndBlocNomBlocLike(long Cin,String nomBloc);
 }

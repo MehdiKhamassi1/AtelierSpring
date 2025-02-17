@@ -3,6 +3,7 @@ package tn.esprit.spring.test.ServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.spring.test.Entity.Foyer;
+import tn.esprit.spring.test.Entity.TypeC;
 import tn.esprit.spring.test.Repository.FoyerRepository;
 import tn.esprit.spring.test.ServiceInterface.IServiceFoyer;
 
@@ -34,5 +35,9 @@ public class FoyerService implements IServiceFoyer {
     @Override
     public void removeFoyer(long idFoyer) {
         foyerRepository.deleteById(idFoyer);
+    }
+
+    public Foyer findgettypenombloc(TypeC t , String nom){
+        return foyerRepository.findByBlocsNomBlocAndBlocsChambresTypeChambreLike(t,nom);
     }
 }

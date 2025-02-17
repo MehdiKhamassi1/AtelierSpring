@@ -31,4 +31,10 @@ public class ChambreService implements IServiceChambre {
         return ChambreRepository.findById(idChambre).orElse(null);
     }
 
+    public List<Chambre> getchambreadresseuniv(String nom){
+        return ChambreRepository.findByBlocFoyerUniversiteAdresseLike(nom);
+    }
+    public Chambre findByReservationsEtudiantsCinAndBlocNomBlocLike(long Cin,String nomBloc){
+        return ChambreRepository.findByReservationsEtudiantsCinAndBlocNomBlocLike(Cin,nomBloc);
+    }
 }

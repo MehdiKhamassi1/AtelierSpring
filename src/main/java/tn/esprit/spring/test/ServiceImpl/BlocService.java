@@ -37,4 +37,7 @@ public class BlocService implements IServiceBloc {
     public void removeBloc(long idBloc) {
         blocRepository.deleteById(idBloc);
     }
+    public List<Bloc> getByUnivNom(String Nom){
+        return blocRepository.findByFoyerUniversiteNomUniversiteLike(Nom);
+    }
 }
