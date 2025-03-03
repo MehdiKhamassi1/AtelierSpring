@@ -1,4 +1,5 @@
 package tn.esprit.spring.test.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.*;
@@ -22,8 +23,10 @@ public class Bloc {
     private Long idBloc;
     private String nomBloc ;
     private Long capaciteBloc ;
+    @JsonIgnore
     @ManyToOne
     private  Foyer foyer;
+    @JsonIgnore
     @OneToMany(mappedBy = "bloc")
     private Set<Chambre> chambres;
 }
